@@ -2,26 +2,20 @@ import java.util.Scanner;
 
 public class GetMoves {
 
-  /**
-   *
-   * @return we return the value in input minus one
-   * because the board is defined from 0 to 3, but the
-   * user input is defined from 1 to 3
-   */
-  public static int getX(Scanner in)
+  public static void getX(Scanner in)
   {
-    return (in.nextInt() - 1);
+    System.out.println(Board.playerNames[Turn.currentTurn] +
+    " Insert X move:");
+    Board.xMove = in.nextInt() -1;
+
   }
 
-  /**
-   *
-   * @return we return the value in input minus one
-   * because the board is defined from 0 to 3, but the
-   * user input is defined from 1 to 3
-   */
-  public static int getY(Scanner in)
+
+  public static void getY(Scanner in)
   {
-    return (in.nextInt() - 1);
+    System.out.println(Board.playerNames[Turn.currentTurn] +
+    " Insert Y move:");
+    Board.yMove = in.nextInt()-1;
   }
 
 }
