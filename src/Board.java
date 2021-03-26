@@ -42,19 +42,11 @@ public class Board {
 
   public static void updateBoard(Scanner in)
   {
-    if (GameLogic.hasTheRightsToBeMoved(in) &&
-      GameLogic.isValidXMove(in) &&
-      GameLogic.isValidYMove(in))
-    {
-      if (Turn.currentTurn == 0)
-      {
-        Board.signs[Board.yMove][Board.xMove] = "X";
-      }
-      else
-      {
-        Board.signs[Board.yMove][Board.xMove] = "O";
-      }
-      Board.isEmpty[Board.yMove][Board.xMove] = false;
+    if (Turn.currentTurn == 0) {
+     Board.signs[Board.yMove][Board.xMove] = "X";
+    } else {
+      Board.signs[Board.yMove][Board.xMove] = "O";
     }
+    Board.isEmpty[Board.yMove][Board.xMove] = false;
   }
 }
