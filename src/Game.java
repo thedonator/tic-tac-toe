@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 public class Game {
+  public static boolean hasEnded = false;
+  
   public static void main(String[] args) {
     
-    boolean hasEnded = false;
     
     
     Scanner in = new Scanner(System.in);
@@ -26,6 +27,7 @@ public class Game {
       }
       Board.updateBoard(in);
       Board.printBoard();
+      GameLogic.controlWin();
       Turn.changeTurn(Turn.currentTurn);
     }
   }
