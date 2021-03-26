@@ -32,4 +32,28 @@ public class GameLogic {
     return Board.isEmpty[Board.yMove][Board.xMove];
   }
 
+  public static void checkDiagonalWin()
+  {
+    if(Board.signs[0][0] == "X" &&
+    Board.signs[1][1] == "X" &&
+    Board.signs[2][2] == "X")
+    {
+      System.out.println("The player "+
+      Board.playerNames[0] + " has won the game");
+      Game.hasEnded = true;
+    }
+
+    if(Board.signs[0][0] == "O" &&
+    Board.signs[1][1] == "O" &&
+    Board.signs[2][2] == "O")
+    {
+      System.out.println("The player "+
+      Board.playerNames[1] + " has won the game");
+      Game.hasEnded = true;
+    }
+  }
+  public static void controlWin()
+  {
+    GameLogic.checkDiagonalWin();
+  }
 }
